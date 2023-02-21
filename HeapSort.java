@@ -7,3 +7,18 @@ public class HeapSort {
             System.out.print(arr[i] + " ");
   
 }
+
+private static void heapSort(int[] arr){
+    int n = arr.length;
+    for (int i = n / 2 - 1; i >= 0; i--)
+        heapify(arr, i, n);
+
+    for(int i = n - 1; i >= 0; i--){ 
+        int temp = arr[i];
+        arr[i] = arr[0];
+        arr[0] = temp;
+
+        heapify(arr, 0, i);
+    } 
+}
+  
